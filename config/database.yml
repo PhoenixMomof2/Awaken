@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: react_rails_api_project_template_development
+  database: awaken_x7w9
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: react_rails_api_project_template_test
+  database: awaken_x7w9
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -66,19 +66,19 @@ test:
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+  # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV['MY_APP_DATABASE_URL'] %>
+  # production:
+  #   url: <%= ENV['postgres://awaken_x7w9_user:uTc85HiIrgmUTZDbtx1RW4lowoab3QoQ@dpg-cfc8p5o2i3mhen4uuua0-a/awaken_x7w9'] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['postgres://awaken_x7w9_user:uTc85HiIrgmUTZDbtx1RW4lowoab3QoQ@dpg-cfc8p5o2i3mhen4uuua0-a/awaken_x7w9'] %>
