@@ -7,7 +7,7 @@ const Header = () => {
         <div className="masthead-content">
             <div className="container px-5">
                 <h1 className="masthead-heading mb-0">Awaken</h1>
-                <h2 className="masthead-subheading mb-0">Book Club</h2>
+                <h2 className="masthead-subheading mb-0">Social Justice Book Club</h2>
                 <a className="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
             </div>
         </div>
