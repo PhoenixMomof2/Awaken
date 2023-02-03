@@ -7,11 +7,11 @@ Group.destroy_all
 
 puts "Creating users..."
 kandis = User.create([
-  {user_name: "Kandis Arzu", avatar: "", age: 39, occupation: ""},
-  {user_name: "Kal Logan", avatar: "", age: 19, occupation: ""},
-  {user_name: "Lyric Jones", avatar: "", age: 23, occupation: ""},
-  {user_name: "Sanai Kelly", avatar: "", age: 48, occupation: ""},
-  {user_name: "Desmond Carter", avatar: "", age: 35, occupation: ""}
+  {user_name: "Kandis Arzu", password: "fitmomof2", age: 39},
+  {user_name: "Kal Logan", password: "superman",  age: 19},
+  {user_name: "Lyric Jones", password: "lyricist",  age: 23},
+  {user_name: "Sanai Kelly", password: "bookreader",  age: 48},
+  {user_name: "Desmond Carter", password: "booklover",  age: 35}
   ])
 
 
@@ -66,9 +66,15 @@ Between the World and Me is Ta-Nehisi Coates’s attempt to answer these questio
 
 puts "Creating groups..."
 Group.create([
-  {group_name: "Anti-Racist", comments: [""]},
-  {group_name: "Pro-Education", comments: [""]},
-  {group_name: "Pro-Justice-Reform", comments: [""]}
+  {group_name: "Anti-Racist", comments: [""], user_id: 1, book_id: 1},
+  {group_name: "Pro-Education", comments: [""], user_id: 2, book_id: 2},
+  {group_name: "Pro-Justice-Reform", comments: [""], user_id: 3, book_id: 3},
+  {group_name: "Anti-Racist", comments: [""], user_id: 1, book_id: 4},
+  {group_name: "Pro-Education", comments: [""], user_id: 4, book_id: 5},
+  {group_name: "Pro-Justice-Reform", comments: [""], user_id: 3, book_id: 6},
+  {group_name: "Anti-Racist", comments: [""], user_id: 1, book_id: 7},
+  {group_name: "Pro-Education", comments: [""], user_id: 4, book_id: 8},
+  {group_name: "Pro-Justice-Reform", comments: [""], user_id: 5, book_id: 9}
 ])
 
 puts "✅ Done seeding!"

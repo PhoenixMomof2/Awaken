@@ -1,14 +1,13 @@
 import React from 'react'
-import Header from './Header'
 import Footer from './Footer'
 import Stamped from '../images/Stamped.jpeg'
 import HowToBeAntiRacist from '../images/HowToBeAntiRacist.jpeg'
 import WhiteLikeMe from '../images/WhiteLikeMe.jpeg'
 
 const Home = () => {
+    
   return ( 
     <div>
-      <Header />
         {/* <!-- Content section 1--> */}
           <section id="scroll">
               <div className="container px-5">
