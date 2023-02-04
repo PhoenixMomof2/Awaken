@@ -43,7 +43,7 @@ const SignUp = () => {
     <div className="masthead-content">
       <div className="container px-5">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
+          <label for="exampleInputPassword1" class="form-label">Username</label>
           <input
             type="text"
             id="user_name"

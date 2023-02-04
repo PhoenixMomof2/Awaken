@@ -9,12 +9,14 @@ const BookProvider = ({ children }) => {
 
   useEffect(() =>{
     fetch('/books')
-      .then(res => res.json())
-      .then((books) => setBooks(books));
-  }, []);
+      .then((res) => res.json())
+      .then((books) => {
+        setBooks(books)
+      }
+  )}, []);
 
   return (
-    <BookContext.Provider value={{books, setBooks}}>
+    <BookContext.Provider value={{books}}>
       {children}
     </BookContext.Provider>
   );

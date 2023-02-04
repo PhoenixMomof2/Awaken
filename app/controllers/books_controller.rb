@@ -4,6 +4,7 @@ class BooksController < ApplicationController
 
   def index
     books = Book.all
+    #byebug
     render json: books
   end
 

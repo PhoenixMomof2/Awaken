@@ -6,7 +6,7 @@ Book.destroy_all
 Group.destroy_all
 
 puts "Creating users..."
-kandis = User.create([
+User.create([
   {user_name: "Kandis Arzu", password: "fitmomof2", age: 39},
   {user_name: "Kal Logan", password: "superman",  age: 19},
   {user_name: "Lyric Jones", password: "lyricist",  age: 23},
