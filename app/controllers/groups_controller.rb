@@ -1,9 +1,13 @@
 class GroupsController < ApplicationController
+  before_authorize :authorize
+
   def index
     render json: Group.all
   end
 
   def show
+    group = find_group
+    render json: group
   end
 
   def create
@@ -17,6 +21,10 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:group_name, :comments, :user_id, :book_id)
+    params.permit(:name, :comments, :user_id, :book_id)
+  end
+
+  def find_group
+    Group.find_by_id(id:params[id])
   end
 end

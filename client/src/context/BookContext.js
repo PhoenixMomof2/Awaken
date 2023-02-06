@@ -7,13 +7,11 @@ const BookContext = React.createContext();
 const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     fetch('/books')
-      .then((res) => res.json())
-      .then((books) => {
-        setBooks(books)
-      }
-  )}, []);
+      .then(res => res.json())
+      .then(books => setBooks(books))
+    }, []);
 
   return (
     <BookContext.Provider value={{books}}>

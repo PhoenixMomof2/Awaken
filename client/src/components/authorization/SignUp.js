@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../../context/UserContext';
 import { redirect } from 'react-router-dom';
 
 const SignUp = () => {
-  const [user_name, setUser_Name] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [age, setAge] = useState("")
@@ -17,19 +17,19 @@ const SignUp = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user_name,
+          username,
           password,
           password_confirmation: passwordConfirmation,
           age
         }),
       })
       .then(res => res.json())
-      .then((user) => {
+      .then(user => {
         if(!user.errors){
           signup(user)
           redirect('/me')
         } else {
-          setUser_Name("")
+          setUsername("")
           setPassword("")
           setPasswordConfirmation("")
           setAge("")
@@ -47,8 +47,8 @@ const SignUp = () => {
           <input
             type="text"
             id="user_name"
-            value={user_name}
-            onChange={(e) => setUser_Name(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="password">Password:</label>
           <input

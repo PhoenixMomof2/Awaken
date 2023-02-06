@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
@@ -6,9 +6,9 @@ import "./index.css";
 import App from "./components/App";
 
 const container = document.getElementById("root");
-//const root = ReactDOM.createRoot(container); // createRoot(container!) if you use TypeScript
+
 render(
-  <BrowserRouter>
+  <BrowserRouter> 
     <App />
   </BrowserRouter>,
   container

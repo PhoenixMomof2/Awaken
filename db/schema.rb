@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_02_01_171303) do
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "book_name"
+    t.string "title"
     t.string "book_img"
     t.string "author"
     t.integer "stars"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2023_02_01_171303) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "group_name"
+    t.string "name"
     t.string "comments"
     t.integer "user_id"
     t.integer "book_id"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2023_02_01_171303) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "username"
     t.string "password_digest"
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false

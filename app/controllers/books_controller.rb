@@ -1,11 +1,9 @@
 class BooksController < ApplicationController
-  wrap_parameters format: []
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   def index
     books = Book.all
-    #byebug
     render json: books
+    #how to include group comments
   end
 
   def show
@@ -18,7 +16,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.permit(:book_name, :book_img, :author, :stars, :category, :content)
+    params.permit(:title, :book_img, :author, :stars, :category, :content)
   end
 
   def find_book

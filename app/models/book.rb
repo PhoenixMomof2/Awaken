@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
-  belongs_to :user
-  belongs_to :group
+  validates :title, :book_img, :author, :stars, :category, :content, presence: true
+
+  has_many :groups
+  has_many :users, through: :groups
 end

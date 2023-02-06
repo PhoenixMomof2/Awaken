@@ -6,8 +6,8 @@ const Login = () => {
 
   const [user_name, setUser_Name] = useState("")
   const [password, setPassword] = useState("")
-  const [errors, setErrors] = useState("")
-  const {login} = useContext(UserContext)
+  const [error, setError] = useState("")
+  const {login} = useContext(UserContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,7 +28,7 @@ const Login = () => {
       res.json().then((user) => login(user));
       redirect('/');
     } else {
-      res.json().then(() => setErrors(errors));
+      res.json().then(() => setError(error));
     }
   });
 }
@@ -36,11 +36,13 @@ const Login = () => {
   return (
     <div className="container px-5">
       <form onSubmit={handleSubmit}>
+        <label>Username</label>
         <input
           type="text"
           value={user_name}
           onChange={(e) => setUser_Name(e.target.value)}
         />
+        <label>Password</label>
         <input
           type="text"
           value={password}
@@ -48,6 +50,9 @@ const Login = () => {
         />
         <button type="submit" onClick={redirect('/me')}>Login</button>
       </form>
+      <ul>
+        <h3>{error}</h3>
+      </ul>
      </div>
   )
 }
